@@ -52,25 +52,19 @@
   <a href="https://yourwebsite.com"><img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=About.me&logoColor=white"/></a>
 </p>
 ---
-### 🏆 GitHub Trophies
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=clawvision&theme=tokyonight&no-frame=true&row=1&column=6"/>
 </p>
----
-### 🐍 Contribution Graph
 <p align="center">
-  <img src="https://raw.githubusercontent.com/clawvision/clawvision/output/github-contribution-grid-snake.svg" alt="snake"/>
 </p>
  src="https://raw.githubusercontent.com/clawvision/clawvision/output/github-contribution-grid-snake.svg" alt="snake"/>
 <p align="center">
-## 🐍 Contribution Snake
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/clawvision/clawvision/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/clawvision/clawvision/output/github-contribution-grid-snake.svg">
   <img alt="snake" src="https://raw.githubusercontent.com/clawvision/clawvision/output/github-contribution-grid-snake.svg">
 </picture>
-## 🐍 Contribution Snake
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/clawvision/clawvision/output/github-contribution-grid-snake-dark.svg">
