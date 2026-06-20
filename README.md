@@ -66,3 +66,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/clawvision/clawvision/output/github-contribution-grid-snake.svg" alt="snake"/>
 </p>
+<br>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/clawvision/clawvision/output/github-contribution-grid-snake.svg" alt="snake"/>
+</p>
