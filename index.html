@@ -3,113 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClawVision | رؤية المستقبل</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>كريم | مطور ويب</title>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    :root {
-      --bg: #0a0a0a;
-      --bg-card: rgba(255,255,255,0.05);
-      --text: white;
-      --text-muted: #b3b3b3;
-      --accent: #00ff88;
-      --accent2: #00aaff;
-    }
-
-    [data-theme="light"] {
-      --bg: #f5f5f5;
-      --bg-card: rgba(0,0,0,0.05);
-      --text: #1a1a1a;
-      --text-muted: #555;
-      --accent: #00cc6a;
-      --accent2: #0088cc;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Cairo', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      transition: 0.3s;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white; min-height: 100vh; transition: 0.3s;
     }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      background: radial-gradient(circle at 20% 30%, #00f5d420 0%, transparent 50%),
-                  radial-gradient(circle at 80% 70%, #00f5d415 0%, transparent 50%);
-      position: relative;
-    }
-
-    [data-theme="light"] .hero {
-      background: radial-gradient(circle at 20% 30%, #00f5d410 0%, transparent 50%),
-                  radial-gradient(circle at 80% 70%, #00f5d408 0%, transparent 50%);
-    }
-
-    .about-section {
-      min-height: 100vh;
-      padding: 120px 20px 60px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .about-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: var(--accent);
-    }
-
-    .about-section p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto 15px;
-    }
+    body.dark { background: #0f172a; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+    h1 { font-size: 3rem; margin-bottom: 1rem; }
+    p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
+    .btn { background: white; color: #667eea; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; }
+    .theme-btn { position: fixed; top: 20px; left: 20px; background: #22c55e; width: 50px; height: 50px; border-radius: 50%; border: none; font-size: 1.5rem; cursor: pointer; z-index: 100; }
+    #about { padding: 100px 20px; text-align: center; max-width: 800px; margin: auto; }
+    #about h2 { font-size: 2.5rem; margin-bottom: 1rem; }
   </style>
 </head>
 <body>
-
-    <button id="theme-toggle" style="position: fixed; top: 20px; left: 20px; z-index: 1000; padding: 10px 15px; background: var(--accent); color: var(--bg); border: none; border-radius: 50px; cursor: pointer; font-family: 'Cairo';">🌙</button>
+  <button class="theme-btn" onclick="toggleTheme()">🌙</button>
   <section class="hero">
-    <div>
-      <h1>ClawVision</h1>      <p>نصنع المستقبل بالتقنية</p>
-      <a href="#about">اكتشف المزيد</a>
-    </div>
+    <h1>مرحباً، أنا كريم</h1>
+    <p>مطور ويب أحوّل الأفكار إلى مواقع تفاعلية سريعة وأنيقة</p>
+    <a href="#about" class="btn">اكتشف المزيد</a>
   </section>
-
-  <section id="about" class="about-section">
+  <section id="about">
     <h2>من أنا</h2>
-    <p>أنا كريم، مطور ومصمم واجهات شغوف بالتقنية والابتكار.</p>
-    <p>أعمل على بناء تجارب رقمية تجمع بين الجمال والأداء.</p>
+    <p>أنا كريم، مطور ويب من الجزائر. متخصص في بناء مواقع وتطبيقات ويب حديثة باستخدام HTML, CSS, JavaScript. نحب التصميم النظيف والتجربة السلسة.</p>
   </section>
   <script>
-    const toggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    
-    toggle.onclick = function() {
-      if (body.getAttribute('data-theme') === 'light') {
-        body.removeAttribute('data-theme');
-        toggle.textContent = '🌙';
-      } else {
-        body.setAttribute('data-theme', 'light');
-        toggle.textContent = '☀️';
-      }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      document.querySelector('.theme-btn').textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+    if(localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      document.querySelector('.theme-btn').textContent = '☀️';
     }
   </script>
-    </body>
+</body>
 </html>
