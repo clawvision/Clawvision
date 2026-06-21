@@ -97,7 +97,20 @@
     <p>أنا كريم، مطور ومصمم واجهات شغوف بالتقنية والابتكار.</p>
     <p>أعمل على بناء تجارب رقمية تجمع بين الجمال والأداء.</p>
   </section>
-
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    toggle.onclick = function() {
+      if (body.getAttribute('data-theme') === 'light') {
+        body.removeAttribute('data-theme');
+        toggle.textContent = '🌙';
+      } else {
+        body.setAttribute('data-theme', 'light');
+        toggle.textContent = '☀️';
+      }
+    }
+  </script>
 </body>
 </html>
       <p>نصنع المستقبل بالتقنية</p>
